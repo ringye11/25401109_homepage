@@ -8,6 +8,25 @@ body {
   background-color: #333;
   margin: 0;
 }
+
+.main {
+  float: right;
+  color: #fff;
+  background: none;
+  border: none;
+}
+
+.id {
+  background-color: #fff;
+  border: none;
+  width: 320px;
+  border-collapse: collapse;
+}
+
+.i_id {
+  border: none;
+}
+
 .filebox {
   display: flex;
   flex-direction: column;
