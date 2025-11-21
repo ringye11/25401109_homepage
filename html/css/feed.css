@@ -1,0 +1,38 @@
+body {
+  font-family: "Inter", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+.filebox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.filebox label {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.filebox label:hover {
+}
+
+.filebox input[type="file"] {
+  display: none;
+}
+
+.filebox img {
+  max-width: 300px;
+  max-height: 300px;
+  margin-top: 10px;
+  border-radius: 5px;
+  display: none;
+}
+
+#btn_x {
+  display: none;
+}

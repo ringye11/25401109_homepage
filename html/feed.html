@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/feed.css" />
+  </head>
+  <body>
+    <form action="feedAdd.jsp" method="post" enctype="multipart/form-data">
+      <table>
+        <tr>
+          <td>ID&nbsp;</td>
+          <td>
+            <input type="text" name="id" placeholder="Email address" required />
+          </td>
+        </tr>
+        <tr>
+          <td><textarea name="content" rows="5" cols="20"></textarea></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="filebox">
+              <label for="image">IMAGE</label>
+              <input type="file" id="image" name="image/*" />
+              <button id="btn_x" type="button">X</button>
+              <img id="preview" alt="미리보기" />
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="submit" value="SEND" />
+          </td>
+        </tr>
+      </table>
+    </form>
+    <script>
+      const input = document.getElementById("image");
+      const preview = document.getElementById("preview");
+      const close = document.getElementById("btn_x");
+
+      input.addEventListener("change", (e) => {
+        const file = e.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = () => {
+            preview.src = reader.result;
+            preview.style.display = "block";
+            close.style.display = "block";
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+
+      close.addEventListener("click", (e) => {
+        e.preventDefault();
+        preview.src = "";
+        preview.style.display = "none";
+        close.style.display = "none";
+        input.value = "";
+      });
+    </script>
+  </body>
+</html>
