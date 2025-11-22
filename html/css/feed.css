@@ -1,3 +1,7 @@
+* {
+  color: #333;
+}
+
 body {
   font-family: "Inter", sans-serif;
   display: flex;
@@ -16,15 +20,61 @@ body {
   border: none;
 }
 
-.id {
-  background-color: #fff;
-  border: none;
-  width: 320px;
+table {
+  display: flex;
+  table-layout: fixed;
   border-collapse: collapse;
+  width: 320px;
+  height: 52px;
+  align-items: center;
+  text-align: left;
 }
 
+.id {
+  display: flex;
+  background: none;
+  border: none;
+}
+.l_id {
+  border: none;
+  width: 100px;
+  line-height: 52px;
+  font-size: 32px;
+  align-items: center;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  -webkit-text-stroke: 4px #333;
+  background-color: #fff;
+}
 .i_id {
   border: none;
+  width: 220px;
+  padding: 0;
+  background-color: #fff;
+  border-radius: 0 100px 100px 0;
+}
+
+.i_id input {
+  display: flex;
+  border: none;
+  background: none;
+  font-size: 32px;
+  line-height: 39px;
+  width: 155px;
+  padding: 0;
+}
+
+.send {
+  opacity: 10%;
+  background: none;
+  border: none;
+  color: #fff5cc;
+  font-size: 100px;
+  -webkit-text-stroke: 8px #fff5cc;
+}
+.send:hover {
+  opacity: 90%;
 }
 
 .filebox {
