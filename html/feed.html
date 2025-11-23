@@ -9,34 +9,31 @@
   <body>
     <form action="feedAdd.jsp" method="post" enctype="multipart/form-data">
       <button class="main">X</button>
-      <table>
-        <tr class="id">
-          <td class="l_id">ID&nbsp;</td>
-          <td class="i_id">
-            <input type="text" name="id" placeholder="Email address" required />
-          </td>
-        </tr>
-        <tr>
-          <td><textarea name="content" rows="5" cols="20"></textarea></td>
-        </tr>
-        <tr>
-          <td>
-            <div class="filebox">
-              <label for="image">IMAGE</label>
-              <input type="file" id="image" name="image/*" />
-              <div id="fileInfo">
-                <span id="fileName"></span>
-                <button id="btn_x" type="button">X</button>
-              </div>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <input type="submit" class="send" value="SEND" />
-          </td>
-        </tr>
-      </table>
+      <div class="id">
+        <span class="l_id">ID&nbsp;</span>
+        <input
+          type="text"
+          name="id"
+          class="i_id"
+          placeholder="Email address"
+          required
+        />
+      </div>
+
+      <div class="text"><textarea name="content"></textarea></div>
+
+      <div class="footer">
+        <input type="submit" class="send" value="SEND" />
+
+        <div class="filebox">
+          <label for="image">IMAGE</label>
+          <input type="file" id="image" name="image/*" />
+          <div id="fileInfo">
+            <span id="fileName"></span>
+            <button id="btn_x" type="button">X</button>
+          </div>
+        </div>
+      </div>
     </form>
     <script>
       const input = document.getElementById("image");
