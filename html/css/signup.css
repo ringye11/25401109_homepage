@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    display: flex;
+    background-color: #333;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+#btns {
+    display: flex;
+    flex-direction: column;
+}
+
+.btn_sign {
+    text-align: center;
+    padding-right: 15px;
+    opacity: 50%;
+    background-color: #fff5cc;
+    border: none;
+    color: #333;
+    font-size: 64px;
+    -webkit-text-stroke: 8px #333;
+    width: 290px;
+    height: 60px;
+    padding-bottom: 70px;
+    border-radius: 100px;
+    margin-bottom: 50px;
+}
+
+.btn_sign:hover {
+    cursor: pointer;
+    opacity: 90%;
+}
+
+.goLogin {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    text-align: right;
+    margin-bottom: -10px;
+    margin-left: 320px;
+}
+
+.goLogin:hover {
+    cursor: pointer;
+}
+
+table {
+    border-spacing: 0 1rem;
+}
+
+.sign_text {
+    width: 473px;
+    margin-bottom: 20px;
+}
+
+.tag {
+    background-color: #fff;
+    border-radius: 100px 0 0 100px;
+    text-align: left;
+    font-size: 20px;
+    padding: 0 25px;
+}
+
+input {
+    width: 322px;
+    height: 43px;
+    padding-left: 20px;
+    font-size: 16px;
+    background-color: #fff5cc;
+    border-radius: 0 100px 100px 0;
+    border: none;
+    outline: none;
+}
