@@ -12,11 +12,7 @@
     }
     
     if (dao.delete(uid)) {
-        // out.print("회원 탈퇴가 완료되었습니다.");
-    	String str = "<p align=center>";
-    	str += "<br>회원 탈퇴가 완료되었습니다.<br>";
-    	str += "그동안 이용해주셔서 감사드립니다.</p>";
-        out.print(str);
+		response.sendRedirect("end.html");
         session.removeAttribute("id");
     }
     else {

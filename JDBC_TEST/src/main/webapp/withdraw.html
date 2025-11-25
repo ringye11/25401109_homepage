@@ -1,21 +1,34 @@
 <html>
 <head>
 <meta charset="utf-8">
+<link rel="stylesheet" href="css/withdraw.css" />
 </head>
-<body>
-<form action="withdraw.jsp" method="post">
-<table align=center>
-<tr><td colspan=2 align=center height=40><b>회원탈퇴</b><td></tr>
-<tr>
-	<td align=right>아이디&nbsp;</td>
-	<td><input type="text" name="id" placeholder="Email address" required></td>
-</tr>
-<tr>
-	<td colspan=2 align=center height=50>
-		<input type="submit" value="회원탈퇴하기">
-	</td>
-</tr>
-</table>
-</form>
-</body>
+    <body>
+        <form action="withdraw.jsp" method="post">
+            <div id="box">
+                <button
+                    class="mypage"
+                    type="button"
+                    onclick="location.href='mypage.jsp'"
+                >
+                    X
+                </button>
+                <b>ACCOUNT</b>
+                <table>
+                    <tr class="id">
+                        <td class="tag">ID&nbsp;</td>
+                        <td>
+                            <input
+                                type="text"
+                                name="id"
+                                placeholder="Email address"
+                                required
+                            />
+                        </td>
+                    </tr>
+                </table>
+                <input class="btn_D" type="submit" value="DELETE?" />
+            </div>
+        </form>
+    </body>
 </html>

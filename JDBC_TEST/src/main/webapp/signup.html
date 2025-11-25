@@ -1,33 +1,49 @@
 <html>
 <head>
 <meta charset="utf-8">
+    <link rel="stylesheet" href="css/signup.css" />
+    <link rel="javascript" href="ai/platform.js">
 </head>
 <body>
 <form action="signup.jsp" method="post">
-<table align=center>
-<tr><td colspan=2 align=center height=40><b>회원가입</b><td></tr>
-<tr>
-	<td align=right>아이디&nbsp;</td>
-	<td><input type="text" name="id" placeholder="Email address" required></td>
-</tr>
-<tr>
-	<td align=right>패스워드&nbsp;</td>
-	<td><input type="password" name="ps" required></td>
-</tr>
-<tr> 
-	<td align=right>패스워드(확인)&nbsp;</td>
-	<td><input type="password" name="ps2" required></td>
-</tr>
-<tr>
-	<td align=right>이름&nbsp;</td>
-	<td><input type="text" name="name" required></td> 
-</tr>
-<tr>
-	<td colspan=2 align=center height=50>
-		<input type="submit" value="회원가입하기">
-	</td>
-</tr>
-</table>
+    <div id="btns">
+      <input class="btn_sign" type="submit" value="SIGN" />
+      <button class="goLogin" onclick="location.href='login.html'">Already a member?</button>
+    </div>
+    <table>
+      <tr class="sign_text">
+        <td class="tag">ID&nbsp;</td>
+        <td class="input">
+          <input type="text" name="id" placeholder="Email address" required />
+        </td>
+      </tr>
+      <tr class="sign_text">
+        <td class="tag">PWD&nbsp;</td>
+        <td class="input"><input type="password" name="ps" required /></td>
+      </tr>
+      <tr class="sign_text">
+        <td class="tag">PWD Check&nbsp;</td>
+        <td class="input"><input type="password" name="ps2" required /></td>
+      </tr>
+      <tr class="sign_text">
+        <td class="tag">NAME&nbsp;</td>
+        <td class="input"><input type="text" name="name" required /></td>
+      </tr>
+	</table>
+	<div id="message" style = "color:red; text-align:left; font-size:16px"></div>
 </form>
+<script>
+window.onload = function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const errorMessage = urlParams.get('error');
+
+    if (errorMessage) {
+        const decodedMessage = decodeURIComponent(errorMessage);
+        
+        document.getElementById('message').textContent = decodedMessage;
+        history.replaceState({}, document.title, "signup.html");
+    }
+};
+</script>
 </body>
 </html>
