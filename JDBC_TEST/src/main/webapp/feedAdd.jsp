@@ -8,7 +8,7 @@
 <%
     request.setCharacterEncoding("utf-8");
 
-    String uid = null, ucon = null, ufname = null;
+    String uid = null, upwd = null, ucon = null, ufname = null;
     byte[] ufile = null;
 
     ServletFileUpload sfu = new ServletFileUpload(new DiskFileItemFactory());
@@ -19,8 +19,10 @@
         FileItem item = (FileItem) iter.next();
         String name = item.getFieldName();
         if(item.isFormField()) {
-            String value = item.getString();
+            String value = item.getString("utf-8");
+            
             if (name.equals("id")) uid = value;
+            else if (name.equals("pwd")) upwd = value;
             else if (name.equals("content")) ucon = value;
         }
         else {
@@ -35,7 +37,7 @@
     }
 
     FeedDAO dao = new FeedDAO();
-    if (dao.insert(uid, ucon, ufname)) {
+    if (dao.insert(uid, upwd, ucon, ufname)) {
         response.sendRedirect("main.jsp");
     }
     else {

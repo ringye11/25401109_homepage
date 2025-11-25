@@ -20,7 +20,7 @@
 	<link rel="stylesheet" href="css/main.css" />
 </head>
 <body>
-	<button class="mypage" type="button" onclick="location.href='mypage.html'">
+	<button class="mypage" type="button" onclick="location.href='mypage.jsp'">
             MYPAGE
     </button>
      <button

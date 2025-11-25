@@ -6,18 +6,28 @@
 </head>
 <body>
 <form action="feedAdd.jsp" method="post" enctype="multipart/form-data">
-      <button class="main" type="button" onclick="location.href='main.jsp'">X</button>
-      <div class="id">
-        <span class="l_id">ID&nbsp;</span>
-        <input
-          type="text"
-          name="id"
-          class="i_id"
-          placeholder="Email address"
-          required
-        />
+    <button class="main" type="button" onclick="location.href='main.jsp'">X</button>
+    <div class="in">
+          <div class="id">
+              <span class="l_id">ID&nbsp;</span>
+              <input
+                  type="text"
+                  name="id"
+                  class="i_id"
+                  placeholder="Email address"
+                  required
+              />
+          </div>
+          <div class="id">
+              <span class="l_id">PWD&nbsp;</span>
+              <input
+                  type="password"
+                  name="pwd"
+                  class="i_id"
+                  required
+              />
+          </div>
       </div>
-
       <div class="text"><textarea name="content"></textarea></div>
 
       <div class="footer">
@@ -25,7 +35,7 @@
 
         <div class="filebox">
           <label for="image">IMAGE</label>
-          <input type="file" id="image" name="image/*" />
+          <input type="file" id="image" name="image" />
           <div id="fileInfo">
             <span id="fileName"></span>
             <button id="btn_x" type="button">X</button>

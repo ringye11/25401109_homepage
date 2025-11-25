@@ -116,4 +116,45 @@ public class UserDAO {
             if (conn != null) conn.close();
         }
     }
+    
+    public String loginAndGetName(String uid, String upass) throws NamingException, SQLException {
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        try {
+            String sql = "SELECT id, password, name FROM user WHERE id = ?";
+            conn = ConnectionPool.get();
+            stmt = conn.prepareStatement(sql);
+            stmt.setString(1, uid);
+            rs = stmt.executeQuery();
+
+            if(!rs.next()) return null;
+            if(!upass.equals(rs.getString("password"))) return "";
+
+            return rs.getString("name");
+        } finally {
+            if(rs != null) rs.close();
+            if(stmt != null) stmt.close();
+            if(conn != null) conn.close();
+        }
+    }
+    
+    public boolean updateProfile(String uid, String newPass, String newName) throws NamingException, SQLException {
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        try {
+            String sql = "UPDATE user SET password=?, name=? WHERE id=?";
+            conn = ConnectionPool.get();
+            stmt = conn.prepareStatement(sql);
+            stmt.setString(1, newPass);
+            stmt.setString(2, newName);
+            stmt.setString(3, uid);
+
+            int count = stmt.executeUpdate();
+            return count == 1;
+        } finally {
+            if(stmt != null) stmt.close();
+            if(conn != null) conn.close();
+        }
+    }
 }
