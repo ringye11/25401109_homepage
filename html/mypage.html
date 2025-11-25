@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="css/mypage.css" />
+    </head>
+    <body>
+        <form action="mypage.jsp" method="post">
+            <button
+                class="main"
+                type="button"
+                onclick="location.href='main.html'"
+            >
+                HOME
+            </button>
+            <b>EDIT PROFILE</b>
+            <table>
+                <tr class="sign_text">
+                    <td class="tag">ID&nbsp;</td>
+                    <td class="input">
+                        <input
+                            type="text"
+                            name="id"
+                            placeholder="Email address"
+                            required
+                        />
+                    </td>
+                </tr>
+                <tr class="sign_text">
+                    <td class="tag">PWD&nbsp;</td>
+                    <td class="input">
+                        <input type="password" name="ps" required />
+                    </td>
+                </tr>
+                <tr class="sign_text">
+                    <td class="tag">PWD Check&nbsp;</td>
+                    <td class="input">
+                        <input type="password" name="ps2" required />
+                    </td>
+                </tr>
+                <tr class="sign_text">
+                    <td class="tag">NAME&nbsp;</td>
+                    <td class="input">
+                        <input type="text" name="name" required />
+                    </td>
+                </tr>
+            </table>
+            <div id="btns">
+                <button class="btn_S" type="button">SAVE</button>
+                <button class="btn_C" type="button">CANCEL</button>
+            </div>
+            <button class="btn_D" type="button">DELETE</button>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="css/main.css" />
+    </head>
+    <body>
+        <button
+            class="mypage"
+            type="button"
+            onclick="location.href='mypage.html'"
+        >
+            MYPAGE
+        </button>
+        <button
+            class="write"
+            type="button"
+            onclick="location.href='feedAdd.html'"
+        >
+            WRITE
+        </button>
+        <table class="feed_list">
+            <% for (FeedObj feed : feeds) { String img = feed.getImages(); %>
+
+            <!-- 상단 줄: 이름 / 시간 / 닫기 -->
+            <tr class="feed_header">
+                <td class="feed_user"><%= feed.getId() %></td>
+                <td class="feed_time"><%= feed.getTs() %></td>
+                <td class="feed_close"><button class="btn_close">X</button></td>
+            </tr>
+
+            <!-- 이미지 + 텍스트 같은 줄 -->
+            <tr class="feed_body">
+                <td colspan="3">
+                    <div class="feed_row">
+                        <% if (img != null) { %>
+                        <img class="feed_img" src="images/<%= img %>" />
+                        <% } %>
+                        <div class="feed_content"><%= feed.getContent() %></div>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="3"><hr /></td>
+            </tr>
+
+            <% } %>
+        </table>
+    </body>
+</html>

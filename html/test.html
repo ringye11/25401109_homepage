@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>테스트</title>
+  </head>
+  <body>
+    <div class="filebox">
+      <label for="image">이미지</label>
+      <input type="file" id="image" />
+      <span class="upload">NO IMAGE</span>
+    </div>
+
+    <script>
+      document.getElementById("image").addEventListener("change", function () {
+        document.querySelector(".upload").style.display = "none";
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    background-color: #333;
+}
+
+.container {
+    opacity: 10%;
+    color: #fff5cc;
+
+    margin-top: 419px;
+    font-size: 64px;
+    -webkit-text-stroke: 4px #fff5cc;
+    &:hover {
+        opacity: 90%;
+    }
+}

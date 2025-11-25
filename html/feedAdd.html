@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="css/feed.css" />
+    </head>
+    <body>
+        <form
+            action="feedAdd.jsp"
+            type="button"
+            method="post"
+            enctype="multipart/form-data"
+        >
+            <button class="main" onclick="location.href='main.html'">X</button>
+            <div class="id">
+                <span class="l_id">ID&nbsp;</span>
+                <input
+                    type="text"
+                    name="id"
+                    class="i_id"
+                    placeholder="Email address"
+                    required
+                />
+            </div>
+
+            <div class="text"><textarea name="content"></textarea></div>
+
+            <div class="footer">
+                <input type="submit" class="send" value="SEND" />
+
+                <div class="filebox">
+                    <label for="image">IMAGE</label>
+                    <input type="file" id="image" name="image/*" />
+                    <div id="fileInfo">
+                        <span id="fileName"></span>
+                        <button id="btn_x" type="button">X</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <script>
+            const input = document.getElementById("image");
+            const fileInfo = document.getElementById("fileInfo");
+            const fileName = document.getElementById("fileName");
+            const close = document.getElementById("btn_x");
+
+            input.addEventListener("change", (e) => {
+                const file = e.target.files[0];
+
+                if (file) {
+                    fileName.textContent = file.name;
+                    fileInfo.style.display = "inline-flex";
+                    close.style.display = "inline-flex";
+                }
+            });
+
+            close.addEventListener("click", () => {
+                input.value = "";
+                fileInfo.style.display = "none";
+                fileName.textContent = "";
+            });
+        </script>
+    </body>
+</html>
