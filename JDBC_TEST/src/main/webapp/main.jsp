@@ -16,7 +16,7 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8"/>
-    <title>작성글 리스트</title>
+    <title>Main</title>
 	<link rel="stylesheet" href="css/main.css" />
 </head>
 <body>
@@ -37,7 +37,7 @@
 
          <div class="feed_body">
              <div class="feed_row">
-                 <% if (img != null) { %>
+                 <% if (feed.getImages() != null && !feed.getImages().equals("")) { %>
                  <img class="feed_img" src="images/<%= img %>" />
                  <% } %>
                  <div class="feed_content"><%= feed.getContent() %></div>
