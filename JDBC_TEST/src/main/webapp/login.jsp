@@ -7,18 +7,23 @@
     String upass = request.getParameter("ps");
     
     UserDAO dao = new UserDAO();
-    
+
+	String message = "";
 
 	String name = dao.loginAndGetName(uid, upass);
     if (name == null) {
-    	out.print("아이디가 존재하지 않습니다.");
+    	message = ("아이디가 존재하지 않습니다.");
     }
     else if (name.equals("")) {
-    	out.print("패스워드가 일치하지 않습니다.");
+    	message = ("패스워드가 일치하지 않습니다.");
     }
     else {
 	    session.setAttribute("id", uid);
 	    session.setAttribute("name", name);
 		response.sendRedirect("main.jsp");
+		return;
     }
+    
+    String encodedMessage = java.net.URLEncoder.encode(message, "UTF-8");
+    response.sendRedirect("login.html?error=" + encodedMessage);
 %>
