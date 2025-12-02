@@ -38,7 +38,7 @@
           <input type="file" id="image" name="image" />
           <div id="fileInfo">
             <span id="fileName"></span>
-            <button id="btn_x" type="button">X</button>
+            <button id="btn_D" type="button">X</button>
           </div>
         </div>
       </div>
@@ -47,7 +47,7 @@
   const input = document.getElementById("image");
   const fileInfo = document.getElementById("fileInfo");
   const fileName = document.getElementById("fileName");
-  const close = document.getElementById("btn_x");
+  const close = document.getElementById("btn_D");
 
   input.addEventListener("change", (e) => {
     const file = e.target.files[0];
